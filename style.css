@@ -1,0 +1,88 @@
+/*
+Theme Name: Twenty Twenty Child
+Theme URI: http://example.com/twenty-twenty-child/
+Description: Twenty Twenty Child Theme
+Author: Jenny Johannessen
+Author URI: http://jennyjohannessen.dk
+Template: twentytwenty
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain: twenty-twenty-child
+*/
+
+/* CSS for custom menu */
+
+div.custom-menu-class {
+  background-color: #142636;
+}
+
+div.custom-menu-class ul {
+  /*padding-top: 2em;
+  padding-right: 4em;*/
+  padding: 0.5em 2rem;
+  list-style-type: none;
+  list-style: none;
+  list-style-image: none;
+  text-align: right;
+}
+div.custom-menu-class li {
+  padding: 0px 20px 0px 0px;
+  display: inline;
+}
+div.custom-menu-class a {
+  text-decoration: none;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 1.8rem;
+  color: white;
+}
+
+div.menu-modal-inner.modal-inner a {
+  color: #142636;
+}
+@media only screen and (max-width: 767px) {
+  #menu-topmenu-loginsome {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  div.toggle-wrapper.nav-toggle-wrapper.has-expanded-menu {
+    display: none;
+  }
+}
+/* CSS for login form */
+
+.h2-login {
+  color: green;
+}
+
+.nk-login {
+  margin: 2em;
+  padding: 2em;
+}
+
+.labeltxt {
+  padding-top: 1em;
+}
+
+.invalid {
+  width: 50%;
+  margin: auto;
+}
+
+/* CSS for registration form */
+
+.wrapper-main {
+  width: 50%;
+  margin: auto;
+}
+
+label {
+  padding-top: 1em;
+  color: aliceblue;
+  font-variant: small-caps;
+  font-weight: 600;
+}
