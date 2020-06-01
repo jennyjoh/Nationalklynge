@@ -7,8 +7,6 @@
  * @since 1.0.0
  */
 
-get_header();
-
 global $wpdb;
 
 if ($_POST) {
@@ -45,15 +43,53 @@ $error = array();
     }
 
     if (count($error) == 0) {
-        wp_create_user($username, $password, $email);
-        echo "User created successfully";
-        exit();
+		
+		add_action('user_register', 'auto_login_after_register');
+
+		function auto_login_after_register( $user_id ){
+			global $wpdb;
+			
+			 //echo "Redirect1";
+
+			 $creds = array();
+			 $creds['user_login'] = $wpdb->escape($_POST['uid']);
+			 $creds['user_password'] = $wpdb->escape($_POST['pwd']);
+			
+			 $creds['remember'] = false;
+			 $user = wp_signon( $creds, false );
+			
+			if ( is_wp_error($user) ) {
+            	echo $user->get_error_message();
+        	} else { 
+				//echo "Redirect2";
+
+				wp_redirect( site_url('mit-nk') );
+				exit;
+			 }
+		}    
+		
+		wp_insert_user( array ('user_login' =>$username, 'user_pass'=>$password, 'user_email'=>$email, 'role' => 'member') );   
+		
+// 		$user_id = wp_create_user($username, $password, $email);
+// 		$user = new WP_User($user_id);
+// 		$user->set_role('member');
+		
+         echo "User created successfully";
+//         exit();
+		
+		
     } else {
         print_r($error);
     }
     
 }
+
+
+get_header();
+
 ?>
+
+
 
 <!--
 <form action="">

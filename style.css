@@ -14,24 +14,22 @@ Text Domain: twenty-twenty-child
 
 /* CSS for custom menu */
 
-div.custom-menu-class {
+div.top-menu-class {
   background-color: #142636;
 }
 
-div.custom-menu-class ul {
-  /*padding-top: 2em;
-  padding-right: 4em;*/
+div.top-menu-class ul {
   padding: 0.5em 2rem;
   list-style-type: none;
   list-style: none;
   list-style-image: none;
   text-align: right;
 }
-div.custom-menu-class li {
+div.top-menu-class li {
   padding: 0px 20px 0px 0px;
   display: inline;
 }
-div.custom-menu-class a {
+div.top-menu-class a {
   text-decoration: none;
   height: 100%;
   padding: 0 10px;
@@ -82,7 +80,14 @@ div.menu-modal-inner.modal-inner a {
 
 label {
   padding-top: 1em;
-  color: aliceblue;
   font-variant: small-caps;
   font-weight: 600;
+  color: #000;
+}
+
+/* CSS for primary menu */
+
+
+.newlogin {
+  margin: 0 2em;
 }
